@@ -1,10 +1,12 @@
+import Home from "./pages/Home.tsx";
+
 
 
 function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+     <Home></Home>
     </>
   )
 }
