@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ThemeController from "./ThemeController.tsx";
 
 const Pageheader = () => {
     const [show, setShow] = useState(true);
@@ -35,7 +36,9 @@ const Pageheader = () => {
                     <li><a className="btn btn-ghost text-l">Career</a></li>
                 </ul>
             </div>
-            <div className="navbar-end"></div>
+            <div className="navbar-end">
+                <ThemeController></ThemeController>
+            </div>
         </div>
     );
 };

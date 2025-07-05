@@ -26,6 +26,19 @@ const AccordionGrid = () => {
                     <div className="collapse-content text-sm">ray
                     </div>
                 </div>
+                <br/>
+                <div className="card bg-base-200 p-4 shadow">
+                    <div className="text-left space-y-4">
+                        <h1 className="text-2xl font-bold">Languages</h1>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        <div className="badge badge-outline">Go</div>
+                        <div className="badge badge-outline">Javascript</div>
+                        <div className="badge badge-outline">TypeScript</div>
+                        <div className="badge badge-outline">Python</div>
+                        <div className="badge badge-outline">HCL</div>
+                    </div>
+                </div>
             </PageCard>
 
 
