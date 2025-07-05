@@ -32,7 +32,7 @@ const Pageheader = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><a className="btn btn-ghost text-l">about</a></li>
                     <li><a className="btn btn-ghost text-l">skills</a></li>
-                    <li><a className="btn btn-ghost text-l">projects</a></li>
+                    <li><a className="btn btn-ghost text-l">Career</a></li>
                 </ul>
             </div>
             <div className="navbar-end"></div>
