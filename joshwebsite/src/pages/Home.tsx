@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 import Pageheader from "../components/pagebody/Pageheader.tsx";
-import SkillsAccordion from "../components/pagesegments/SkillsAccordion.tsx";
+import SkillsAccordion from "../components/pagesegments/Skills.tsx";
 import PageCard from "../components/pagebody/PageCard.tsx";
 import Career from "../components/pagesegments/Career.tsx";
 

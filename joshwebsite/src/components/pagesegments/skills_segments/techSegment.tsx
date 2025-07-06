@@ -1,0 +1,69 @@
+import SegmentTitle from "./segmentTitle.tsx";
+import SegmentBlock from "./segmentBlock.tsx";
+import { FaAws, FaMicrosoft, FaDatabase, FaDocker } from "react-icons/fa";
+import { SiKubernetes } from "react-icons/si";
+import { SiAwslambda, SiElasticsearch } from "react-icons/si";
+import { LuBrainCircuit, LuBrainCog } from "react-icons/lu";
+import { MdSupportAgent } from "react-icons/md";
+import { FcLinux } from "react-icons/fc";
+
+const TechSegment = () => {
+
+    return (
+        <>
+            <div className="card bg-base-200 p-4 shadow">
+                <SegmentTitle>Technologies</SegmentTitle>
+                <div className="flex flex-wrap gap-2 mt-2">
+                    <SegmentBlock>
+                        <LuBrainCircuit />
+                        AI
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <LuBrainCog />
+                        Machine Learning
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <MdSupportAgent />
+                        Agent Automation
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <FaAws/>
+                        AWS
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <FaMicrosoft/>
+                        Azure
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <SiKubernetes className="text-blue-700" />
+                        Kubernetes
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <SiAwslambda className="text-orange-600" />
+                        Serverless
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <FcLinux />
+                        Linux
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <SiElasticsearch />
+                        ElasticSearch
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <FaDatabase />
+                        Databases
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <FaDocker className="text-blue-500" />
+                        Docker
+                    </SegmentBlock>
+                </div>
+            </div>
+            </>
+
+            )
+
+            }
+
+            export default TechSegment;
