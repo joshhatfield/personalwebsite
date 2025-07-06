@@ -1,7 +1,7 @@
 import SegmentTitle from "./segmentTitle.tsx";
 import SegmentBlock from "./segmentBlock.tsx";
 import { FaAws, FaMicrosoft, FaDatabase, FaDocker } from "react-icons/fa";
-import { SiKubernetes } from "react-icons/si";
+import { SiKubernetes, SiN8N } from "react-icons/si";
 import { SiAwslambda, SiElasticsearch } from "react-icons/si";
 import { LuBrainCircuit, LuBrainCog } from "react-icons/lu";
 import { MdSupportAgent } from "react-icons/md";
@@ -13,6 +13,7 @@ const TechSegment = () => {
         <>
             <div className="card bg-base-200 p-4 shadow">
                 <SegmentTitle>Technologies</SegmentTitle>
+                <br/>
                 <div className="flex flex-wrap gap-2 mt-2">
                     <SegmentBlock>
                         <LuBrainCircuit />
@@ -25,6 +26,10 @@ const TechSegment = () => {
                     <SegmentBlock>
                         <MdSupportAgent />
                         Agent Automation
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <SiN8N className="text-orange-500" />
+                        n8n
                     </SegmentBlock>
                     <SegmentBlock>
                         <FaAws/>

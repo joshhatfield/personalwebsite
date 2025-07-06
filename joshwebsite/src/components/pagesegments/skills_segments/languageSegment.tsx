@@ -13,6 +13,7 @@ const LanguageSegment = () => {
         <>
             <div className="card bg-base-200 p-4 shadow">
                 <SegmentTitle>Languages</SegmentTitle>
+                <br/>
                 <div className="flex flex-wrap gap-2 mt-2">
                     <SegmentBlock>
                         <FaGolang className="text-blue-400"/>
