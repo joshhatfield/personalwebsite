@@ -6,6 +6,7 @@ import { SiAwslambda, SiElasticsearch } from "react-icons/si";
 import { LuBrainCircuit, LuBrainCog } from "react-icons/lu";
 import { MdSupportAgent } from "react-icons/md";
 import { FcLinux } from "react-icons/fc";
+import { DiCisco } from "react-icons/di";
 
 const TechSegment = () => {
 
@@ -62,6 +63,10 @@ const TechSegment = () => {
                     <SegmentBlock>
                         <FaDocker className="text-blue-500" />
                         Docker
+                    </SegmentBlock>
+                    <SegmentBlock>
+                        <DiCisco className="text-green-800" />
+                        Networking
                     </SegmentBlock>
                 </div>
             </div>

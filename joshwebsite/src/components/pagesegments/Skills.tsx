@@ -7,15 +7,18 @@ import ExperienceSegment from "./skills_segments/experienceSegment.tsx";
 const AccordionGrid = () => {
     return (
         <>
-            <PageCard>
-                <div className="text-center space-y-4">
-                    <h1 className="text-4xl font-bold">skills</h1>
-                    <br/>
-                </div>
-                <TechSegment></TechSegment>
-                <LanguageSegment></LanguageSegment>
-                <ExperienceSegment></ExperienceSegment>
-            </PageCard>
+            <div id="skillsseg" className="scroll-mt-20">
+                <PageCard>
+                    <div className="text-center space-y-4">
+                        <h1 className="text-4xl font-bold">skills</h1>
+                        <br/>
+                    </div>
+                    <TechSegment></TechSegment>
+                    <LanguageSegment></LanguageSegment>
+                    <ExperienceSegment></ExperienceSegment>
+                </PageCard>
+            </div>
+
 
 
         </>
