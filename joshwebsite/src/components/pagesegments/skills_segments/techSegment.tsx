@@ -7,6 +7,7 @@ import { LuBrainCircuit, LuBrainCog } from "react-icons/lu";
 import { MdSupportAgent } from "react-icons/md";
 import { FcLinux } from "react-icons/fc";
 import { DiCisco } from "react-icons/di";
+import { AiOutlineOpenAI } from "react-icons/ai";
 
 const TechSegment = () => {
 
@@ -17,8 +18,12 @@ const TechSegment = () => {
                 <br/>
                 <div className="flex flex-wrap gap-2 mt-2">
                     <SegmentBlock>
+                        <AiOutlineOpenAI/>
+                        OpenAI
+                    </SegmentBlock>
+                    <SegmentBlock>
                         <LuBrainCircuit />
-                        AI
+                        LLM
                     </SegmentBlock>
                     <SegmentBlock>
                         <LuBrainCog />
@@ -26,7 +31,7 @@ const TechSegment = () => {
                     </SegmentBlock>
                     <SegmentBlock>
                         <MdSupportAgent />
-                        Agent Automation
+                        Agentic ops
                     </SegmentBlock>
                     <SegmentBlock>
                         <SiN8N className="text-orange-500" />

@@ -1,39 +1,35 @@
 import PageCard from "../pagebody/PageCard.tsx";
-import {FaDownload, FaGithub, FaLinkedin} from "react-icons/fa";
-
 
 const About = () => {
 
     return (
-        <>
-            <div id="aboutseg" className="scroll-mt-20">
-                <PageCard>
-                    <div className="text-center space-y-4">
-                        <h1 className="text-4xl font-bold">Josh Hatfield</h1>
-                        <p className="text-xl text-primary">DevOps · AI/ML · Developer</p>
-                        <p className="text-base">
-                            Experienced engineer and leader specializing in scalable large scale automation,
-                            full-stack development and Machine Learning systems. Passionate about building resilient
-                            systems and clean UIs.
-                        </p>
-
-                        <div className="flex flex-wrap justify-center gap-4 mt-6">
-                            <a href="/cv.pdf" className="btn btn-primary gap-2">
-                                <FaDownload/> Download CV
-                            </a>
-                            <a href="https://github.com/joshhatfield" className="btn btn-neutral gap-2" target="_blank"
-                               rel="noreferrer">
-                                <FaGithub/> GitHub
-                            </a>
-                            <a href="https://linkedin.com/in/jhatfieldcloud" className="btn btn-accent gap-2"
-                               target="_blank" rel="noreferrer">
-                                <FaLinkedin/> LinkedIn
-                            </a>
-                        </div>
+        <div id="aboutseg" className="scroll-mt-20">
+            <PageCard>
+                <div className="prose prose-lg max-w-none">
+                    <h2 className="text-section font-bold text-base-content mb-6">
+                        About Me
+                    </h2>
+                    <p className="text-lg text-base-content/80 leading-relaxed">
+                        An experienced Manager, Leader and Engineer of highly effective cloud computing and security
+                        focused engineering teams for global scale companies. A wide range of skills from management to
+                        hands-on design and implementation of world-class solutions to fit company and customer needs.
+                    </p>
+                    <p className="text-lg text-base-content/80 leading-relaxed mt-4">
+                        Serving as Principal Cloud Architect at Objective Corporation (ASX:OCL),
+                        I lead cloud strategy, AI initiatives, and application design for global solutions.
+                        My expertise spans cloud architecture, machine learning systems, DevOps transformation, Platform engineering
+                        and building high-performing global teams.
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                        <span className="badge badge-primary badge-lg">Cloud Architecture</span>
+                        <span className="badge badge-secondary badge-lg">AI/ML</span>
+                        <span className="badge badge-accent badge-lg">DevSecOps</span>
+                        <span className="badge badge-outline badge-lg">Team Leadership</span>
+                        <span className="badge badge-outline badge-lg">Compliance</span>
                     </div>
-                </PageCard>
-            </div>
-        </>
+                </div>
+            </PageCard>
+        </div>
     )
 
 }

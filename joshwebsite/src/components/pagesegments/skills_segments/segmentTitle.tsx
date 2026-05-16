@@ -1,6 +1,8 @@
 
 
-const SegmentTitle = ({children}) => {
+import type { ReactNode } from "react";
+
+const SegmentTitle = ({ children }: { children: ReactNode }) => {
 
 
     return (
