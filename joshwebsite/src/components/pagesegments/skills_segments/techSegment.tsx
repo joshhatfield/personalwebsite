@@ -59,7 +59,7 @@ const TechSegment = () => {
                     </SegmentBlock>
                     <SegmentBlock>
                         <SiElasticsearch />
-                        ElasticSearch
+                        Elastic/OpenSearch
                     </SegmentBlock>
                     <SegmentBlock>
                         <FaDatabase />
