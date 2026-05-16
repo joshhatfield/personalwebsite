@@ -1,2 +1,129 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* ============================================
+   CUSTOM THEME: Slate + Violet + Blue
+   CTO-Level Executive Brand
+   ============================================ */
+
+/* Light Theme */
+:root,
+[data-theme="josh-light"],
+[data-theme="light"] {
+  color-scheme: light;
+  
+  --color-base-100: oklch(100% 0 0);           /* White */
+  --color-base-200: oklch(98% 0.01 240);       /* Slate 50 */
+  --color-base-300: oklch(93% 0.02 240);       /* Slate 200 */
+  --color-base-content: oklch(20% 0.03 240);   /* Slate 900 */
+  
+  --color-primary: oklch(45% 0.04 250);        /* Slate 800 */
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(65% 0.20 255);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(60% 0.22 290);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(15% 0.03 240);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: oklch(65% 0.20 255);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(70% 0.20 145);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(80% 0.18 85);
+  --color-warning-content: oklch(20% 0.03 85);
+  --color-error: oklch(60% 0.25 25);
+  --color-error-content: oklch(100% 0 0);
+}
+
+/* Dark Theme */
+[data-theme="josh-dark"],
+[data-theme="dark"] {
+  color-scheme: dark;
+  
+  --color-base-100: oklch(15% 0.03 240);       /* Slate 900 */
+  --color-base-200: oklch(20% 0.03 240);       /* Slate 800 */
+  --color-base-300: oklch(30% 0.03 240);       /* Slate 700 */
+  --color-base-content: oklch(95% 0.01 240);   /* Slate 100 */
+  
+  --color-primary: oklch(92% 0.01 250);        /* Slate 200 */
+  --color-primary-content: oklch(15% 0.03 240);
+  --color-secondary: oklch(75% 0.18 255);
+  --color-secondary-content: oklch(15% 0.03 240);
+  --color-accent: oklch(80% 0.18 295);
+  --color-accent-content: oklch(15% 0.03 240);
+  --color-neutral: oklch(95% 0.01 240);
+  --color-neutral-content: oklch(15% 0.03 240);
+  --color-info: oklch(75% 0.18 255);
+  --color-info-content: oklch(15% 0.03 240);
+  --color-success: oklch(75% 0.18 150);
+  --color-success-content: oklch(15% 0.03 240);
+  --color-warning: oklch(85% 0.16 85);
+  --color-warning-content: oklch(15% 0.03 85);
+  --color-error: oklch(65% 0.22 25);
+  --color-error-content: oklch(100% 0 0);
+}
+
+/* Theme transition */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base typography */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--b2));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--p));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--pf));
+}
+
+/* Scroll reveal animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Selection styling */
+::selection {
+    background: hsl(var(--s));
+    color: hsl(var(--sc));
+}
+
+/* Font families */
+.font-sans {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+}

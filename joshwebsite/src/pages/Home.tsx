@@ -1,31 +1,72 @@
-import React from "react";
-import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
+import { useEffect, useRef } from "react";
+import Pageheader from "../components/pagebody/Pageheader.tsx";
+import Footer from "../components/pagebody/Footer.tsx";
+import Hero from "../components/pagesegments/Hero.tsx";
+import SkillsAccordion from "../components/pagesegments/Skills.tsx";
+import Career from "../components/pagesegments/Career.tsx";
+import About from "../components/pagesegments/About.tsx";
 
-const Home: React.FC = () => {
+const Home = () => {
+    const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate-fade-in");
+                        entry.target.classList.remove("opacity-0");
+                    }
+                });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+        );
+
+        sectionRefs.current.forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <main className="min-h-screen bg-base-100 text-base-content flex items-center justify-center p-8">
-            <div className="max-w-3xl w-full card bg-base-200 shadow-xl p-8 rounded-box">
-                <div className="text-center space-y-4">
-                    <h1 className="text-4xl font-bold">Josh Hatfield</h1>
-                    <p className="text-xl text-primary">Cloud Engineer · DevOps · React/Golang Developer</p>
-                    <p className="text-base">
-                        Experienced engineer specializing in scalable cloud infrastructure, automation, and full-stack development. Passionate about building resilient systems and clean UIs.
-                    </p>
+        <div className="min-h-screen flex flex-col">
+            <Pageheader />
 
-                    <div className="flex flex-wrap justify-center gap-4 mt-6">
-                        <a href="/cv.pdf" className="btn btn-primary gap-2">
-                            <FaDownload /> Download CV
-                        </a>
-                        <a href="https://github.com/yourusername" className="btn btn-neutral gap-2" target="_blank" rel="noreferrer">
-                            <FaGithub /> GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/yourprofile" className="btn btn-accent gap-2" target="_blank" rel="noreferrer">
-                            <FaLinkedin /> LinkedIn
-                        </a>
-                    </div>
+            <main className="flex-1 pt-16">
+                <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
+                    <section
+                        ref={(el) => { sectionRefs.current[0] = el; }}
+                        className="opacity-0 transition-opacity duration-700"
+                    >
+                        <Hero />
+                    </section>
+
+                    <section
+                        ref={(el) => { sectionRefs.current[1] = el; }}
+                        className="opacity-0 transition-opacity duration-700"
+                    >
+                        <About />
+                    </section>
+
+                    <section
+                        ref={(el) => { sectionRefs.current[2] = el; }}
+                        className="opacity-0 transition-opacity duration-700"
+                    >
+                        <SkillsAccordion />
+                    </section>
+
+                    <section
+                        ref={(el) => { sectionRefs.current[3] = el; }}
+                        className="opacity-0 transition-opacity duration-700"
+                    >
+                        <Career />
+                    </section>
                 </div>
-            </div>
-        </main>
+            </main>
+
+            <Footer />
+        </div>
     );
 };
 

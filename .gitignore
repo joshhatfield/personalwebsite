@@ -33,3 +33,6 @@ Thumbs.db
 *.log
 *.tgz
 *.local
+
+# OpenCode context/planning (agent memory)
+.opencode/
