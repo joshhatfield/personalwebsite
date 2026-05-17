@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -34,21 +34,11 @@ const Footer = () => {
                             <FaLinkedin />
                             <span className="hidden md:inline">LinkedIn</span>
                         </a>
-                        <a
-                            href="mailto:josh@jjhatfield.com"
-                            className="btn btn-ghost btn-sm gap-2 text-base-content/70 hover:text-primary"
-                            aria-label="Email"
-                        >
-                            <FaEnvelope />
-                            <span className="hidden md:inline">Email</span>
-                        </a>
                     </div>
 
                     {/* Built with */}
                     <div className="text-base-content/60 text-sm flex items-center gap-1">
-                        Built with
-                        <span className="text-accent">❤️</span>
-                        using React + TypeScript + TailwindCSS
+                        Built with care, code is on my github.
                     </div>
                 </div>
             </div>

@@ -43,10 +43,10 @@ const leadershipSkills: LeadershipSkill[] = [
 const LeadershipCard = ({ skill }: { skill: LeadershipSkill }) => {
     return (
         <div className="card bg-base-200 hover:bg-base-300/50 transition-colors duration-300 group">
-            <div className="card-body p-5">
-                <div className="flex items-start gap-4">
+            <div className="card-body p-4 sm:p-5">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                     {/* Icon */}
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         {skill.icon}
                     </div>
 
