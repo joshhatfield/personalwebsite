@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Pageheader = () => {
     const [show, setShow] = useState(true);
@@ -13,6 +14,7 @@ const Pageheader = () => {
         }
         return true;
     });
+    const location = useLocation();
 
     // Apply theme
     useEffect(() => {
@@ -64,26 +66,62 @@ const Pageheader = () => {
         setMobileMenuOpen(false);
     };
 
-    const navItem = (id: string, label: string) => (
-        <li>
-            <button
-                onClick={() => scrollTo(id)}
-                className={`relative px-4 py-3 text-lg font-medium transition-colors duration-300 w-full text-left ${
-                    activeSection === id
-                        ? "text-primary"
-                        : "text-base-content/70 hover:text-base-content"
-                }`}
-            >
-                {label}
-                {/* Active indicator */}
-                <span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform duration-300 origin-left ${
-                        activeSection === id ? "scale-100" : "scale-0"
-                    }`}
-                />
-            </button>
-        </li>
-    );
+    const isBlogPage = location.pathname.startsWith('/blog');
+
+    const navItem = (id: string, label: string) => {
+        // Special handling for blog link - always navigates to route
+        if (id === "blog") {
+            return (
+                <li>
+                    <Link
+                        to="/blog"
+                        className="relative px-4 py-3 text-lg font-medium transition-colors duration-300 w-full text-left text-base-content/70 hover:text-base-content"
+                    >
+                        {label}
+                    </Link>
+                </li>
+            );
+        }
+
+        return (
+            <li>
+                {isBlogPage ? (
+                    <Link
+                        to="/"
+                        className={`relative px-4 py-3 text-lg font-medium transition-colors duration-300 w-full text-left ${
+                            activeSection === id
+                                ? "text-primary"
+                                : "text-base-content/70 hover:text-base-content"
+                        }`}
+                    >
+                        {label}
+                        <span
+                            className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform duration-300 origin-left ${
+                                activeSection === id ? "scale-100" : "scale-0"
+                            }`}
+                        />
+                    </Link>
+                ) : (
+                    <button
+                        onClick={() => scrollTo(id)}
+                        className={`relative px-4 py-3 text-lg font-medium transition-colors duration-300 w-full text-left ${
+                            activeSection === id
+                                ? "text-primary"
+                                : "text-base-content/70 hover:text-base-content"
+                        }`}
+                    >
+                        {label}
+                        {/* Active indicator */}
+                        <span
+                            className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform duration-300 origin-left ${
+                                activeSection === id ? "scale-100" : "scale-0"
+                            }`}
+                        />
+                    </button>
+                )}
+            </li>
+        );
+    };
 
     return (
         <>
@@ -109,6 +147,7 @@ const Pageheader = () => {
                                 {navItem("aboutseg", "about")}
                                 {navItem("skillsseg", "skills")}
                                 {navItem("careerseg", "career")}
+                                {navItem("blog", "blog")}
                                 <li>
                                     <button
                                         onClick={() => setIsDark(!isDark)}
@@ -176,6 +215,7 @@ const Pageheader = () => {
                         {navItem("aboutseg", "about")}
                         {navItem("skillsseg", "skills")}
                         {navItem("careerseg", "career")}
+                        {navItem("blog", "blog")}
                     </ul>
                 </nav>
 
