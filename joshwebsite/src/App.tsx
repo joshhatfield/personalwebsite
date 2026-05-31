@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<BlogListPage articles={articles} />} />
-        <Route path="/blog/:slug" element={<BlogArticlePage articles={articles} />} />
+        <Route path="/blog/smart-ai-on-a-budget" element={<BlogArticlePage article={BudgetAiArticle} />} />
       </Routes>
     </BrowserRouter>
   );

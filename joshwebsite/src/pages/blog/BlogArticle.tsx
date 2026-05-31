@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Pageheader from "../../components/pagebody/Pageheader.tsx";
 import Footer from "../../components/pagebody/Footer.tsx";
 import {
@@ -13,7 +13,7 @@ import {
 import type { BlogArticle, BlogContentBlock } from "./types";
 
 interface BlogArticlePageProps {
-  articles: BlogArticle[];
+  article: BlogArticle;
 }
 
 const renderContentBlock = (block: BlogContentBlock, index: number) => {
@@ -71,29 +71,8 @@ const renderContentBlock = (block: BlogContentBlock, index: number) => {
   }
 };
 
-const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ articles }) => {
-  const { slug } = useParams<{ slug: string }>();
-  const article = articles.find((a) => a.slug === slug) || null;
-
-  if (!article) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Pageheader />
-        <main className="flex-1 pt-28">
-          <div className="max-w-4xl mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold mb-8">Article Not Found</h1>
-            <p className="text-lg text-base-content/70 mb-8">
-              The article you're looking for doesn't exist.
-            </p>
-            <Link to="/blog" className="btn btn-primary">
-              Back to Blog
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+const BlogArticlePage: React.FC<BlogArticlePageProps> = ({ article }) => {
+  // Hardcoded route - no slug validation needed
 
   return (
     <div className="min-h-screen flex flex-col">
