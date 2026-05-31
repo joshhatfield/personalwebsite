@@ -74,6 +74,12 @@ body {
     line-height: 1.6;
 }
 
+/* Ensure text is selectable */
+* {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
 /* Smooth scroll */
 html {
     scroll-behavior: smooth;
