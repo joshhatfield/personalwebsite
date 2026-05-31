@@ -10,6 +10,13 @@ import OpencodeactivCheapAiImage from "../../data/blogimages/opencode-activity.p
 import Openagents from "../../data/blogimages/openagents.png";
 import OpenagentsAgents from "../../data/blogimages/openagents-agents.png";
 import OpenagentsResp from "../../data/blogimages/openagent-response.png";
+import Context7 from "../../data/blogimages/context7.png";
+import Context7demo from "../../data/blogimages/context7demo.png";
+import OpenchamberDark from "../../data/blogimages/openchamberdar.png";
+import Secrev1 from "../../data/blogimages/secreview-demo.png";
+import Secrev2 from "../../data/blogimages/secreview2.png";
+
+
 
 export interface BlogArticle {
     slug: string;
@@ -31,10 +38,11 @@ const BudgetAiArticle: BlogArticle = {
         { id: "intro", label: "Introduction" },
         { id: "tools-user", label: "My Tools" },
         { id: "getting-started", label: "Getting Started" },
-        { id: "bonus", label: "Bonus Tricks" },
+        { id: "working-example", label: "Example" },
     ],
     content: [
-        { type: 'paragraph', props: { content: "With a few simple tools and methods you can make even older models perform responsively, in this article i'll share my stack which I use to productively code without burning through expensive tokens." } },
+        { type: 'paragraph', props: { content: "Something I always strive for is gaining meaningful and cost effective results from AI" } },
+        { type: 'paragraph', props: { content: "With a few simple tools and methods you can make even older models perform responsively, in this article i'll share my stack which I use to productively code without burning through expensive tokens and requiring complex tooling setup." } },
         { type: 'image', props: { src: heroCheapAiImage, alt: "my AI Stack"} },
         { type: 'header', props: { id: "intro", title: "Introduction" } },
         { type: 'paragraph', props: { content: "Being an early adopter of AI assisted coding and in my day to day workflow coding projects from home I ran into several issues with excessive cost and excess token usage, moreover I ran into issues where dated libraries or software stacks would get confused with newer versions implementing strange code which I would then have to dial back and redo by hand or spend time excessively diagnosing." } },
@@ -114,11 +122,42 @@ const BudgetAiArticle: BlogArticle = {
 
         { type: 'header', props: { title: "Context7" } },
 
+        { type: 'image', props: { src: Context7, alt: "my AI Stack"} },
+
+        { type: 'paragraph', props: { content: "https://context7.com/" } },
+
+        { type: 'paragraph', props: { content: "Context7 is a great tool that is included in the stack I use, The idea is simple context is the knowledge of your chat and history that is sent to your LLM alongside your main request. Context7 is a bunch of pre-prepared knowledge that can be added to your requests context to add knowledge that your chosen LLM may not have." } },
+
+        { type: 'paragraph', props: { content: "As a working example I chose a cheaper model (Deepseek 3.1) released in late 2025 and asked it a question about an event that happened in 2026, without needing a web scraper, Skills, or a special MCP service I was able to get information through context 7 on how to lookup the latest relevant data and have it fed to my AI to provide a response, no complex configuration needed." } },
+
+
+        { type: 'image', props: { src: Context7demo, alt: "my AI Stack"} },
+
+        { type: 'paragraph', props: { content: "Tools like this come in extremely useful when it comes to new and old software frameworks and general knowledge gaps, especially using cheaper models." } },
+
+
         { type: 'header', props: { title: "OpenChamber" } },
 
-        { type: 'header', props: { id: "bonus", title: "Bonus Tricks" } },
+        { type: 'image', props: { src: OpenchamberDark, alt: "my AI Stack"} },
 
-        { type: 'image', props: { src: "https://...", alt: "Description", caption: "Optional caption" } },
+        { type: 'paragraph', props: { content: "https://openchamber.dev/" } },
+
+        { type: 'paragraph', props: { content: "Openchamber is a UI for opencode, while opencode's web interface is neat Openchamber takes it to a whole other level with much more detail, better formatting, colour themes and much more. for me this is the tool which brings all of the above components together into a powerful workspace to make the most of my AI systems." } },
+
+
+        { type: 'header', props: { id: "working-example", title: "Example" } },
+
+        { type: 'paragraph', props: { content: "Now bringing it all together i'll use the codereviewer functionality to do a security review of the source code on this website, I have chosen Minimax M2.5 which is a very cheap model that can be enhanced with my toolset." } },
+
+        { type: 'image', props: { src: Secrev1, alt: "my AI Stack"} },
+
+        { type: 'paragraph', props: { content: "And there it is! for $0.0071 I was able to get a security report on my codebase with no external subscriptions or expensive 3rd party tools needed, I also didnt need to configure any advanced AI settings." } },
+
+        { type: 'paragraph', props: { content: "Directly from the UI I can read the report which thankfully found no critical issues and only minor concerns which have since been remediated, incredibly easy to get a higher quality of security review with minimal effort." } },
+
+        { type: 'image', props: { src: Secrev2, alt: "my AI Stack"} },
+
+
     ]
 };
 
