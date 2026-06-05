@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown';
+
 type ListType = 'ordered' | 'unordered';
 
 interface BlogListProps {
@@ -11,7 +13,9 @@ const BlogList: React.FC<BlogListProps> = ({ items, type }) => {
   return (
     <ul className={`mb-6 pl-6 space-y-2 ${listClassName}`}>
       {items.map((item, index) => (
-        <li key={index} className="text-lg">{item}</li>
+        <li key={index} className="text-lg">
+          <ReactMarkdown>{item}</ReactMarkdown>
+        </li>
       ))}
     </ul>
   );

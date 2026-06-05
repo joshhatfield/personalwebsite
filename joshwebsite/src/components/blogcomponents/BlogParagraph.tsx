@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown';
+
 interface BlogParagraphProps {
   content: string;
   className?: string;
@@ -5,7 +7,9 @@ interface BlogParagraphProps {
 
 const BlogParagraph: React.FC<BlogParagraphProps> = ({ content, className = "" }) => {
   return (
-    <p className={`mb-6 leading-relaxed text-lg ${className}`}>{content}</p>
+    <div className={`mb-6 leading-relaxed text-lg ${className}`}>
+      <ReactMarkdown>{content}</ReactMarkdown>
+    </div>
   );
 };
 

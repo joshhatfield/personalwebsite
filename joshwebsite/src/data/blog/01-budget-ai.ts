@@ -1,5 +1,5 @@
-import type { BlogMenuItem } from "../../components/blogcomponents";
-import type {BlogContentBlock} from "./demo-article.ts";
+
+import type {BlogArticle} from "./bloginterfaces";
 import heroCheapAiImage from "../../data/blogimages/hero-cheapai.png";
 import OpenRouterCheapAiImage from "../../data/blogimages/openrouter-cheapai.png";
 import Opencode1CheapAiImage from "../../data/blogimages/opencode-cheapai.png";
@@ -18,20 +18,12 @@ import Secrev2 from "../../data/blogimages/secreview2.png";
 
 
 
-export interface BlogArticle {
-    slug: string;
-    title: string;
-    date: string;
-    author: string;
-    tags: string[];
-    menuItems: BlogMenuItem[];
-    content: BlogContentBlock[];
-}
+
 
 const BudgetAiArticle: BlogArticle = {
     slug: "smart-ai-on-a-budget",           // URL: /blog/my-new-article
     title: "How I make AI work smarter and faster on a budget",
-    date: "2025-05-23",
+    date: "2026-05-23",
     author: "Josh Hatfield",
     tags: ["AI", "Agents", "Context Automation"],
     menuItems: [
@@ -50,20 +42,20 @@ const BudgetAiArticle: BlogArticle = {
         { type: 'paragraph', props: { content: "After experimentation I settled on my current software stack which I found not only saved tokens, but also made cheaper models behave far smarter and more performant than my experiences with even top shelf models, In this article i'll share my workflow and development stack." } },
         { type: 'header', props: { id: "tools-user", title: "My Tools" } },
         { type: 'paragraph', props: { content: "The tools I use are accessible to anyone with a computer, you dont require excessive GPU or a development PC.  Each of these tools builds on one another to add extra capability to my AI usage" } },
-        { type: 'list', props: { type: 'ordered', items: ["Openrouter - LLM's from all major vendors, Pay as you go", "Opencode - An open source coding agent", "OpenAgents - Hundreds of AI agent tools for free", "Context7 - If your LLM doesn't know Context7 Does", "OpenChamber - An incredible UI for AI work"] } },
+        { type: 'list', props: { type: 'ordered', items: ["**Openrouter** - LLM's from all major vendors, Pay as you go", "**Opencode** - An open source coding agent", "**OpenAgents** - Hundreds of AI agent tools for free", "**Context7** - If your LLM doesn't know Context7 Does", "**OpenChamber** - An incredible UI for AI work"] } },
         { type: 'quote', props: { content: "The tools we use have a profound and devious influence on our thinking habits, and therefore on our thinking abilities.", author: "Edsger W. Dijkstra" } },
         { type: 'paragraph', props: { content: "With the combined tools listed I have been able to significantly accelerate my workflow and ability to ship results." } },
         { type: 'header', props: { id: "getting-started", title: "Getting Started" } },
         { type: 'paragraph', props: { content: "Lets walk through each of the tools in my stack and its setup" } },
         { type: 'header', props: { title: "OpenRouter" } },
         { type: 'image', props: { src: OpenRouterCheapAiImage, alt: "my AI Stack"} },
-        { type: 'paragraph', props: { content: "https://openrouter.ai" } },
+        { type: 'paragraph', props: { content: "[https://openrouter.ai](https://openrouter.ai)" } },
         { type: 'paragraph', props: { content: "Started in early 2023 as the first LLM marketplace, OpenRouter has grown to become the largest and most popular AI gateway. They remove the need to subscribe to one service e.g Claude or ChatGPT and provide an API + chat to all major AI providers on Pay as you go terms." } },
         { type: 'paragraph', props: { content: "The process to get up and running here is simple, Create an account and put in some small amount of money for AI token usage I started with $5 which took me a while to get through.  Openrouter is my gateway to multiple AI providers." } },
         { type: 'paragraph', props: { content: "if you already have API access to a AI LLM you may not need this tool however it is a great setup for people who are just starting out." } },
         { type: 'header', props: { title: "OpenCode" } },
         { type: 'image', props: { src: Opencode1CheapAiImage, alt: "my AI Stack"} },
-        { type: 'paragraph', props: { content: "https://opencode.ai" } },
+        { type: 'paragraph', props: { content: "[https://opencode.ai](https://opencode.ai)" } },
         { type: 'paragraph', props: { content: "OpenCode is an agent chat tool that helps you write code in your terminal, IDE, Browser, or desktop." } },
         { type: 'paragraph', props: { content: "In addition to supporting coding tools Opencode has a \"web\" mode which will open an easy to use ChatGPT style interface, if you are not familiar with Terminals or IDE's this is a great shortcut to advanced AI usage." } },
         { type: 'paragraph', props: { content: "To launch web mode after installing Opencode simply type into your terminal/CLI," } },
@@ -96,7 +88,7 @@ const BudgetAiArticle: BlogArticle = {
 
         { type: 'image', props: { src: Openagents, alt: "my AI Stack"} },
 
-        { type: 'paragraph', props: { content: "https://github.com/darrenhinde/OpenAgentsControl" } },
+        { type: 'paragraph', props: { content: "[OpenAgents Github](https://github.com/darrenhinde/OpenAgentsControl)" } },
 
         { type: 'paragraph', props: { content: "Agents are in brief AI personas with rules and instructions about how they can operate there are commonly used to orchestrate workflows. After spending time writing my own agents and skills it occurred to me that peers on the internet had likely also written agents and published them" } },
         { type: 'paragraph', props: { content: "Out of the box OpenCode only comes with two agents, Build and Plan.  One writes content, the other plans and reads content.  Openagents comes with several pre-made agents and hundreds of sub-agent environments which deliver many incredible features, Mainly." } },
@@ -124,7 +116,7 @@ const BudgetAiArticle: BlogArticle = {
 
         { type: 'image', props: { src: Context7, alt: "my AI Stack"} },
 
-        { type: 'paragraph', props: { content: "https://context7.com/" } },
+        { type: 'paragraph', props: { content: "[https://context7.com](https://context7.com)" } },
 
         { type: 'paragraph', props: { content: "Context7 is a great tool that is included in the stack I use, The idea is simple context is the knowledge of your chat and history that is sent to your LLM alongside your main request. Context7 is a bunch of pre-prepared knowledge that can be added to your requests context to add knowledge that your chosen LLM may not have." } },
 
@@ -140,7 +132,7 @@ const BudgetAiArticle: BlogArticle = {
 
         { type: 'image', props: { src: OpenchamberDark, alt: "my AI Stack"} },
 
-        { type: 'paragraph', props: { content: "https://openchamber.dev/" } },
+        { type: 'paragraph', props: { content: "[https://openchamber.dev](https://openchamber.dev)" } },
 
         { type: 'paragraph', props: { content: "Openchamber is a UI for opencode, while opencode's web interface is neat Openchamber takes it to a whole other level with much more detail, better formatting, colour themes and much more. for me this is the tool which brings all of the above components together into a powerful workspace to make the most of my AI systems." } },
 

@@ -74,10 +74,19 @@ body {
     line-height: 1.6;
 }
 
-/* Ensure text is selectable */
-* {
-    -webkit-user-select: text;
-    user-select: text;
+/* Ensure text is selectable - override any framework defaults */
+html,
+body,
+*,
+*::before,
+*::after {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+}
+
+p, span, div, li, td, th, a, h1, h2, h3, h4, h5, h6, label, button {
+    -webkit-user-select: text !important;
+    user-select: text !important;
 }
 
 /* Smooth scroll */
@@ -132,4 +141,16 @@ html {
 
 .font-mono {
     font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+}
+
+/* Blog link styling */
+.prose a {
+    color: hsl(var(--p));
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+}
+
+.prose a:hover {
+    color: hsl(var(--s));
 }
